@@ -1,11 +1,30 @@
 /* =========================================================
-   Tr. White 童言記事本 - 客製化樣式表 (Final Clean Version)
+   Tr. White 童言記事本 - Custom Theme Refactored
    ========================================================= */
 
-/* 引入 Google Fonts: Kosugi Maru (適合可愛風格的漢字) */
-@import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap');
+/* --- 0. Variables & Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Kosugi+Maru&display=swap');
 
-/* 強制標題使用圓體 */
+:root {
+  --tw-cream: #FFFAF4;
+  --tw-paper: #FFFEFA;
+  --tw-pencil: #3A2F2F;
+  /* Main text color */
+  --tw-muted: #6A5C5C;
+  --tw-pink: #EC9DAF;
+  /* Brand accent */
+  --tw-pink-2: #F6DDDD;
+  /* Light hover background */
+  --tw-pink-strong: #E91E63;
+  /* Strong pink for text/icons */
+  --tw-brand-strong: #ff4d88;
+  /* Active/Hover text */
+  --tw-sky: #D9E9FC;
+  --tw-line: rgba(217, 233, 252, 0.45);
+  --tw-margin: rgba(236, 157, 175, 0.35);
+}
+
+/* --- 1. Global Typography & Resets --- */
 h1,
 h2,
 h3,
@@ -16,321 +35,11 @@ h6,
   font-family: 'Kosugi Maru', sans-serif !important;
 }
 
-/* =============== 1. Banner / Hero (首頁大圖) =============== */
-/* 讓 Banner 圖更聚焦在黑板 */
-#banner.banner {
-  background-position: center 38% !important;
-}
-
-/* 文字往上移一點，對齊黑板中心 */
-#banner .banner-text {
-  transform: translateY(-9vh);
-}
-
-/* 手機版微調 */
-@media (max-width: 768px) {
-  #banner .banner-text {
-    transform: translateY(-5vh);
-  }
-}
-
-/* 標題（含打字效果）設定 */
-#banner .banner-text .h2,
-#banner #subtitle {
-  margin: 0;
-  font-size: clamp(30px, 4vw, 56px);
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  color: #FFF9E8 !important;
-  /* 微暖白 */
-  text-shadow: 0 4px 14px rgba(0, 0, 0, 0.55);
-}
-
-/* Typed.js 游標更亮 */
-#banner .typed-cursor {
-  color: #FFF9E8 !important;
-  text-shadow: 0 4px 14px rgba(0, 0, 0, 0.55);
-  opacity: 1 !important;
-}
-
-/* =============== 2. 導覽列 (Navbar) =============== */
-/* 透明狀態 (Top) */
-.navbar:not(.top-nav-collapse) {
-  background: rgba(10, 14, 12, .12) !important;
-  backdrop-filter: blur(1px);
-}
-
-.navbar:not(.top-nav-collapse) .navbar-brand,
-.navbar:not(.top-nav-collapse) .nav-link,
-.navbar:not(.top-nav-collapse) .iconfont {
-  color: #ffffff !important;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.45) !important;
-}
-
-/* 滾動後狀態 (Scrolled) - Light Mode */
-html:not([data-user-color-scheme="dark"]) .navbar.top-nav-collapse .navbar-brand,
-html:not([data-user-color-scheme="dark"]) .navbar.top-nav-collapse .nav-link,
-html:not([data-user-color-scheme="dark"]) .navbar.top-nav-collapse .iconfont {
-  color: #2E4A3D !important;
-  /* 深綠字 */
-  text-shadow: none !important;
-}
-
-/* Dark Mode 導覽列文字 */
-html[data-user-color-scheme="dark"] .navbar .navbar-brand,
-html[data-user-color-scheme="dark"] .navbar .nav-link,
-html[data-user-color-scheme="dark"] .navbar .iconfont {
-  color: #F5F7FA !important;
-}
-
-/* 互動效果：滑鼠移過選單變粉色 */
-html body .navbar .navbar-nav .nav-item .nav-link:hover {
-  color: #FF80AB !important;
-  text-shadow: 0 0 8px rgba(255, 128, 171, 0.6) !important;
-  transition: all 0.3s ease;
-}
-
-/* =============== 3. 手機版選單 (Mobile Menu) =============== */
-@media (max-width: 768px) {
-
-  /* Light Mode: 白底深綠字 */
-  html:not([data-user-color-scheme="dark"]) .navbar-collapse {
-    background-color: rgba(255, 255, 255, 0.98) !important;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-  }
-
-  html:not([data-user-color-scheme="dark"]) .navbar-collapse .nav-link,
-  html:not([data-user-color-scheme="dark"]) .navbar-collapse .iconfont {
-    color: #2E4A3D !important;
-    font-weight: 700 !important;
-  }
-
-  /* Dark Mode: 深綠底白字 */
-  html[data-user-color-scheme="dark"] .navbar-collapse {
-    background-color: rgba(20, 30, 25, 0.95) !important;
-  }
-
-  /* 通用結構 */
-  .navbar-collapse {
-    backdrop-filter: blur(5px);
-    border-radius: 0 0 20px 20px;
-    padding-bottom: 20px;
-    margin-top: 5px;
-  }
-
-  .navbar-collapse .nav-item .nav-link {
-    font-size: 1.15rem;
-    padding: 12px 0;
-    text-align: center;
-  }
-}
-
-/* 漢堡按鈕優化 */
-html:not([data-user-color-scheme="dark"]) .navbar.top-nav-collapse .navbar-toggler {
-  background-color: #2E4A3D !important;
-  border-color: #2E4A3D !important;
-  border-radius: 6px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-/* 強制漢堡線條為白色 */
-html:not([data-user-color-scheme="dark"]) .navbar.top-nav-collapse .navbar-toggler .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
-}
-
-/* =============== 4. 標籤與分類 =============== */
-/* 4. 標籤與分類 (全站統一：粉紅糖果按鈕) */
-/* 不管在首頁、內頁還是標籤雲頁面，通通強制變身！ */
-.category-link,
-.tag-link,
-.article-tag a,
-.article-tag-list-link,
-.tagcloud a {
-  /* 👈 特別加上這個，確保標籤雲頁面也生效 */
-  display: inline-block !important;
-  padding: 4px 12px !important;
-
-  /* [背景] 實心淺粉 (確保有底色，字才看得清楚) */
-  background: #ffeef5 !important;
-
-  /* [文字] 品牌深粉 (強制覆蓋掉原本太淡的顏色) */
-  color: #E91E63 !important;
-
-  border-radius: 50px !important;
-  font-size: 0.9rem !important;
-  margin: 0 5px 5px 0 !important;
-  text-decoration: none !important;
-  border: 1px solid rgba(233, 30, 99, 0.1) !important;
-}
-
-/* 懸停效果：滑鼠移過去變深色 */
-.category-link:hover,
-.tag-link:hover,
-.article-tag a:hover,
-.article-tag-list-link:hover,
-.tagcloud a:hover {
-  background: #E91E63 !important;
-  color: #fff !important;
-  transform: translateY(-2px);
-  /* 跳一下 */
-}
-
-/* =============== 5. 文章內頁樣式 (教室風) =============== */
-
-/* 內文排版 */
-.markdown-body {
-  font-family: 'Kosugi Maru', sans-serif !important;
-  font-size: 1.1rem;
-  line-height: 2.2;
-}
-
-/* H2 標題 (黃色粉筆) */
-.markdown-body h2 {
-  border-bottom: 3px solid #FFC107 !important;
-  color: #2E4A3D;
-  padding-bottom: 5px;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-}
-
-/* H3 標題 (粉色粉筆) */
-.markdown-body h3 {
-  border-left: 5px solid #E91E63;
-  padding-left: 10px;
-  color: #444;
-  margin-top: 1.5rem;
-}
-
-/* 引用區塊 (對話框) */
-.markdown-body blockquote {
-  background-color: #FFF9C4;
-  /* 鵝黃 */
-  border-left: none;
-  border-radius: 15px;
-  padding: 20px 20px 20px 30px;
-  margin: 30px 0;
-  color: #5d4037;
-  box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
-  position: relative;
-}
-
-.markdown-body blockquote::before {
-  content: "💬";
-  font-size: 1.5rem;
-  position: absolute;
-  top: -15px;
-  left: 10px;
-}
-
-/* 圖片樣式 (Light Mode) */
-.markdown-body img {
-  border-radius: 6px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  border: 4px solid #fff;
-}
-
-/* 文章容器 (.board) */
-.board {
-  background-color: #ffffff;
-  background-image: radial-gradient(#d0d0e1 1.5px, transparent 1.5px);
-  background-size: 20px 20px;
-  border-radius: 15px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-  margin-top: -50px;
-  padding-top: 20px;
-}
-
-/* 版權框 (粉色優惠券) */
-.license-box {
-  background-color: #ffeef5 !important;
-  border: 3px dashed #ff80ab !important;
-  border-radius: 20px !important;
-  color: #880e4f !important;
-  box-shadow: none !important;
-  margin-top: 40px;
-}
-
-.license-box .license-title,
-.license-box .license-meta-item,
-.license-box .license-meta-item a {
-  color: #880e4f !important;
-  font-weight: bold;
-}
-
-/* =============== 6. Dark Mode 特別優化區 (增強對比) =============== */
-html[data-user-color-scheme="dark"] #banner {
-  filter: brightness(0.8) contrast(1.1);
-}
-
-/* Board (深色黑板) */
-html[data-user-color-scheme="dark"] .board {
-  background-color: #37474f !important;
-  border: 2px dashed rgba(128, 203, 196, 0.3) !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
-  background-image: radial-gradient(rgba(128, 203, 196, 0.15) 1.5px, transparent 1.5px);
-}
-
-/* 圖片 (發光拍立得) */
-html[data-user-color-scheme="dark"] .markdown-body img {
-  border: 6px solid #ffffff !important;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.4) !important;
-  filter: brightness(0.95) !important;
-}
-
-/* 文字與對話框 */
-html[data-user-color-scheme="dark"] .markdown-body {
-  color: #E0E0E0 !important;
-}
-
-html[data-user-color-scheme="dark"] .markdown-body h2 {
-  color: #FFEB3B !important;
-  border-bottom-color: #FFEB3B !important;
-}
-
-html[data-user-color-scheme="dark"] .markdown-body blockquote {
-  background-color: #455A64 !important;
-  color: #FFCC80 !important;
-  box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.3);
-}
-
-/* 版權框 (深色版) */
-html[data-user-color-scheme="dark"] .license-box {
-  background-color: #37474f !important;
-  border-color: #80cbc4 !important;
-  color: #b2dfdb !important;
-}
-
-html[data-user-color-scheme="dark"] .license-box .license-title,
-html[data-user-color-scheme="dark"] .license-box .license-meta-item,
-html[data-user-color-scheme="dark"] .license-box .license-meta-item a {
-  color: #b2dfdb !important;
-}
-
-/* =============== 7. 細節精修 (Scrollbar & Footer) =============== */
-
-/* 滑鼠選取顏色 */
 ::selection {
   background: #FF80AB;
   color: #ffffff;
 }
 
-::-moz-selection {
-  background: #FF80AB;
-  color: #ffffff;
-}
-
-/* 頁尾版權 */
-footer .footer-content a {
-  display: none;
-}
-
-footer .footer-content::after {
-  content: "© Tr. White All Rights Reserved.";
-  font-size: 0.9rem;
-  opacity: 0.6;
-}
-
-/* 自定義捲動條 */
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
@@ -341,13 +50,8 @@ footer .footer-content::after {
   border-radius: 10px;
 }
 
-html[data-user-color-scheme="dark"] ::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.05);
-}
-
 ::-webkit-scrollbar-thumb {
   background-color: #2E4A3D;
-  /* 黑板綠 */
   border-radius: 10px;
   border: 2px solid transparent;
   background-clip: content-box;
@@ -355,78 +59,473 @@ html[data-user-color-scheme="dark"] ::-webkit-scrollbar-track {
 
 ::-webkit-scrollbar-thumb:hover {
   background-color: #E91E63;
-  /* 品牌粉 */
 }
 
-/* =========================================
-   🌙 Dark Mode 標籤專屬優化 (粉筆螢光風)
-   ========================================= */
-/* 讓黑夜模式的標籤不要那麼刺眼 (改為透明底+亮粉字) */
-html[data-user-color-scheme="dark"] .category-link,
-html[data-user-color-scheme="dark"] .tag-link,
-html[data-user-color-scheme="dark"] .article-tag a,
-html[data-user-color-scheme="dark"] .article-tag-list-link,
-html[data-user-color-scheme="dark"] .tagcloud a {
-  /* 1. 背景變透明 (融入黑板) 或 改成半透明深粉 rgba(233, 30, 99, 0.2) */
+/* Background */
+html,
+body {
+  background-color: var(--tw-cream) !important;
+  background-image:
+    radial-gradient(circle at 10% 12%, rgba(246, 221, 221, 0.55), transparent 42%),
+    radial-gradient(circle at 92% 8%, rgba(204, 220, 203, 0.40), transparent 40%),
+    radial-gradient(circle at 8% 92%, rgba(217, 233, 252, 0.45), transparent 44%);
+}
+
+/* --- 2. Navbar Styling --- */
+/* Base Navbar (Transparent Top) */
+.navbar {
+  transition: background .3s, backdrop-filter .3s;
+}
+
+.navbar:not(.top-nav-collapse) {
+  background: rgba(10, 14, 12, .12) !important;
+  backdrop-filter: blur(1px);
+}
+
+.navbar:not(.top-nav-collapse) .navbar-brand,
+.navbar:not(.top-nav-collapse) .nav-link,
+.navbar:not(.top-nav-collapse) .iconfont {
+  color: #ffffff !important;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
+}
+
+/* Scrolled Navbar (Notebook Style) */
+.navbar.top-nav-collapse {
+  background: rgba(255, 243, 246, 0.92) !important;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(236, 157, 175, 0.22);
+  box-shadow: 0 4px 20px rgba(58, 47, 47, 0.05);
+}
+
+.navbar.top-nav-collapse .navbar-brand,
+.navbar.top-nav-collapse .nav-link,
+.navbar.top-nav-collapse .iconfont {
+  color: var(--tw-pencil) !important;
+  text-shadow: none !important;
+}
+
+/* Navbar Items & Interaction */
+.navbar .nav-item .nav-link {
+  border-radius: 999px;
+  transition: all 0.2s ease;
+}
+
+/* Hover: Pink capsule (Only for non-active items) */
+.navbar .nav-item:not(.active) .nav-link:hover {
+  background: var(--tw-pink-2) !important;
+  color: var(--tw-brand-strong) !important;
+}
+
+/* Active: Underline / Subtle indicator */
+.navbar .nav-item.active .nav-link {
   background: transparent !important;
-
-  /* 2. 邊框改成亮粉色 (像粉筆畫的圈圈) */
-  border: 1px solid #FF80AB !important;
-
-  /* 3. 文字改成亮粉色 (確保在黑底看得到) */
-  color: #FF80AB !important;
+  color: var(--tw-brand-strong) !important;
+  font-weight: bold;
+  box-shadow: inset 0 -3px 0 var(--tw-pink);
 }
 
-/* 黑夜模式懸停效果 (移過去變實心亮粉，會有發光感) */
-html[data-user-color-scheme="dark"] .category-link:hover,
-html[data-user-color-scheme="dark"] .tag-link:hover,
-html[data-user-color-scheme="dark"] .article-tag a:hover,
-html[data-user-color-scheme="dark"] .article-tag-list-link:hover,
-html[data-user-color-scheme="dark"] .tagcloud a:hover {
-  background: #FF80AB !important;
-  color: #fff !important;
-  box-shadow: 0 0 10px rgba(255, 128, 171, 0.6);
-  /* 加一點霓虹燈光暈 */
+/* Mobile Menu Cleanup */
+@media (max-width: 768px) {
+  .navbar-collapse {
+    background: rgba(255, 255, 255, 0.98) !important;
+    backdrop-filter: none !important;
+    /* Fix fuzzy text */
+    border-radius: 0 0 20px 20px;
+    padding-bottom: 20px;
+  }
+
+  /* Force Dark Text in Mobile Menu (Override transparent navbar white text) */
+  .navbar .navbar-collapse .nav-item .nav-link {
+    color: var(--tw-pencil) !important;
+    text-shadow: none !important;
+    font-size: 1.1rem !important;
+    padding: 12px !important;
+    font-weight: bold;
+  }
+
+  .navbar .navbar-collapse .nav-item .nav-link:hover {
+    background: var(--tw-pink-2) !important;
+  }
+}
+
+/* Hamburger Icon Synchronization */
+/* Default (Top/Transparent): Icon should be White */
+/* Hamburger Icon Synchronization (animated-icon) */
+/* Default (Top/Transparent): Bars should be White */
+nav.navbar:not(.top-nav-collapse) .navbar-toggler .animated-icon span {
+  background-color: #ffffff !important;
+}
+
+/* Scrolled (Notebook): Bars should be Dark */
+.navbar.top-nav-collapse .navbar-toggler .animated-icon span {
+  background-color: var(--tw-pencil) !important;
+}
+
+/* Hamburger & Search - Remove weird backgrounds */
+.navbar-toggler,
+#search-btn {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+/* --- 3. Layout: Banner & Board --- */
+/* Banner */
+#banner.banner {
+  background-position: center 38% !important;
+}
+
+#banner .banner-text {
+  transform: translateY(-9vh);
+}
+
+#banner .mask {
+  background: rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Lighter mask */
+/* Banner Text */
+/* Banner Text & Responsiveness */
+/* Banner Text & Responsiveness */
+/* Default (PC/Laptop > 768px) */
+#banner .h2 {
+  color: #FFF9E8 !important;
+  text-shadow: 0 4px 14px rgba(0, 0, 0, 0.55);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  margin: 0;
+  font-size: 56px;
+}
+
+#banner #subtitle,
+#banner .typed-cursor {
+  color: #FFF9E8 !important;
+  text-shadow: 0 4px 14px rgba(0, 0, 0, 0.55);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  font-size: 36px;
+  /* Subtitle should be smaller */
+  margin-top: 10px;
+}
+
+/* Tablet / Mobile Landscape (768px and below) */
+@media (max-width: 768px) {
+  #banner .h2 {
+    font-size: 40px !important;
+    white-space: normal !important;
+    line-height: 1.2 !important;
+    padding: 0 10px;
+  }
+
+  #banner #subtitle,
+  #banner .typed-cursor {
+    font-size: 28px !important;
+    /* Smaller subtitle */
+    white-space: normal !important;
+    line-height: 1.3 !important;
+    padding: 0 10px;
+  }
+}
+
+/* Mobile Portrait (576px and below) */
+@media (max-width: 576px) {
+  #banner .h2 {
+    font-size: 30px !important;
+    white-space: normal !important;
+    line-height: 1.3 !important;
+    padding: 0 5px;
+  }
+
+  #banner #subtitle,
+  #banner .typed-cursor {
+    font-size: 20px !important;
+    /* Even smaller for mobile */
+    white-space: normal !important;
+    line-height: 1.4 !important;
+    padding: 0 5px;
+    margin-top: 5px;
+  }
+}
+
+/* Hide the typing cursor to prevent "extra blank" look */
+.typed-cursor {
+  opacity: 0 !important;
+  display: none !important;
+}
+
+/* Main Board (Notebook) */
+#board {
+  background-color: var(--tw-paper);
+  border-radius: 18px !important;
+  box-shadow: 0 14px 40px rgba(58, 47, 47, 0.10) !important;
+  padding-top: 2rem;
+  /* Notebook Lines */
+  background-image:
+    linear-gradient(to right, transparent 0 3.2rem, var(--tw-margin) 3.2rem 3.25rem, transparent 3.25rem),
+    repeating-linear-gradient(to bottom, var(--tw-line) 0 1px, transparent 1px 2.1rem);
+}
+
+/* Binder Holes */
+#board::before {
+  content: "";
+  position: absolute;
+  left: 1.15rem;
+  top: 2.2rem;
+  bottom: 2.2rem;
+  width: 1.1rem;
+  background: radial-gradient(circle, rgba(58, 47, 47, 0.20) 0 2px, transparent 3px) 0 0 / 100% 2.6rem;
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+/* Signature (Tr. White) */
+#board::after {
+  content: "Tr. White";
+  position: absolute;
+  bottom: 1.5rem;
+  right: 2.5rem;
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.2rem;
+  color: var(--tw-pencil);
+  opacity: 0.7;
+  transform: rotate(-8deg);
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Card Radius */
+.index-card,
+.card,
+.post-content,
+.article,
+#comments {
+  border-radius: 16px !important;
+}
+
+/* Post Separator (Dashed Line) */
+.index-card:not(:last-child) {
+  border-bottom: 2px dashed rgba(236, 157, 175, 0.4) !important;
+  /* Soft Pink Dashed Line */
+  margin-bottom: 2.5rem !important;
+  padding-bottom: 2.5rem !important;
+}
+
+/* --- Post List Visual Hierarchy --- */
+/* 1. Description: Darker and clear */
+.index-card .index-excerpt,
+.index-card .index-excerpt>div {
+  color: #444 !important;
+  font-size: 1rem;
+  line-height: 1.8;
+  margin: 10px 0 15px;
+}
+
+/* 2. Meta Info (Date/Category): Muted/Lighter */
+.index-card .post-meta {
+  color: #a0a0a0 !important;
+  font-size: 0.9rem;
+}
+
+.index-card .post-meta i {
+  color: #ccc !important;
+  /* Icons faaaade away */
+}
+
+/* 3. Tags in List: Remove "Button" look, make them subtle text */
+.index-card .post-meta .article-tag {
+  margin-left: 10px;
+}
+
+.index-card .post-meta .article-tag a {
+  color: #999 !important;
+  /* Match meta color */
+  background: transparent !important;
+  /* No background */
+  border: none !important;
+  /* No border */
+  padding: 0 4px !important;
+  font-size: 0.85rem;
+  font-weight: normal;
+}
+
+.index-card .post-meta .article-tag a:hover {
+  color: var(--tw-pink-strong) !important;
+  background: transparent !important;
+  text-decoration: underline !important;
+  transform: none !important;
+  /* No jump */
+}
+
+/* --- 4. Content Content Styling --- */
+.markdown-body {
+  font-family: 'Kosugi Maru', sans-serif !important;
+  color: var(--tw-pencil) !important;
+  line-height: 2.2;
+}
+
+.markdown-body h2 {
+  border-bottom: 3px solid #FFC107 !important;
+  color: #2E4A3D;
+  padding-bottom: 5px;
+  margin-top: 2rem;
+}
+
+.markdown-body h3 {
+  border-left: 5px solid #E91E63;
+  padding-left: 10px;
+  color: #444;
+}
+
+.markdown-body blockquote {
+  background-color: #FFF9C4;
+  border-left: none;
+  border-radius: 15px;
+  padding: 1rem;
+  box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.markdown-body blockquote::before {
+  content: "💬";
+  position: absolute;
+  top: -15px;
+  left: 10px;
+  font-size: 1.5rem;
+}
+
+/* Links (Scoped to Content Only) */
+/* Prevent replacing buttons or nav links */
+.post-content a:not(.btn):not(.tag):not(.headerlink),
+.markdown-body a:not(.btn):not(.tag):not(.headerlink) {
+  color: var(--tw-pink-strong);
+  text-decoration: none;
+  transition: background 0.2s;
+  border-radius: 4px;
+  padding: 0 4px;
+}
+
+.post-content a:not(.btn):not(.tag):not(.headerlink):hover,
+.markdown-body a:not(.btn):not(.tag):not(.headerlink):hover {
+  background: var(--tw-pink-2);
+  color: var(--tw-pencil);
+}
+
+/* --- 5. Widgets: Categories & Tags --- */
+/* Common Pill Style */
+.category-link,
+.tag-link,
+.article-tag a,
+.tagcloud a,
+.category-item,
+.category-subitem,
+.category-post-list .list-group-item,
+.list-group-item {
+  display: inline-block !important;
+  padding: 4px 12px !important;
+  border-radius: 50px !important;
+  text-decoration: none !important;
+  border: 1px solid rgba(233, 30, 99, 0.15) !important;
+  margin: 0 4px 4px 0;
+
+  /* Reset Background to Transparent (Fixes "Pink Box" issue) */
+  background: transparent !important;
+  color: var(--tw-pink-strong) !important;
+  transition: all 0.2s;
+}
+
+/* Hover State */
+.category-link:hover,
+.tag-link:hover,
+.article-tag a:hover,
+.tagcloud a:hover,
+.category-item:hover,
+.category-subitem:hover,
+.category-item:hover a,
+/* Fix for nested links */
+.category-post-list .list-group-item:hover,
+.list-group-item:hover {
+  background: var(--tw-pink-2) !important;
+  color: var(--tw-pink-strong) !important;
+  border-color: var(--tw-pink-strong) !important;
+  transform: translateY(-2px);
+}
+
+/* Categories List Specifics (Fluid Theme overrides) */
+.category-post-list .list-group-item {
+  background: transparent !important;
+  border: none !important;
+}
+
+/* --- 6. Social Icons --- */
+/* --- 6. Social Icons --- */
+.icon-blogger-custom {
+  display: inline-block;
+  width: 1em;
+  /* Matches font size of parent */
+  height: 1em;
+  background-color: #FF5722;
+  border-radius: 4px;
+  /* Soft rounded corners */
+  position: relative;
+  vertical-align: -0.12em;
+  /* Align with text */
+}
+
+/* The White Icon inside */
+.icon-blogger-custom::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 85%;
+  /* Icon size increased to 85% */
+  height: 85%;
+  background-color: white;
+  /* The "B" is white */
+  -webkit-mask: url('/images/blogger.svg') no-repeat center / contain;
+  mask: url('/images/blogger.svg') no-repeat center / contain;
+}
+
+.icon-facebook-fill {
+  color: #1877F2 !important;
+}
+
+/* a:hover .icon-blogger-custom ruleset removed as it's handled by .social-icon */
+
+/* Footer Copyright Override */
+footer .footer-content a {
+  display: none;
+}
+
+footer .footer-content::after {
+  content: "© Tr. White All Rights Reserved.";
+  font-size: 0.9rem;
+  opacity: 0.6;
+}
+
+/* --- 7. Dark Mode Overrides (Minimalist) --- */
+html[data-user-color-scheme="dark"] body {
+  background-color: #263238 !important;
+  /* Dark Slate */
+}
+
+html[data-user-color-scheme="dark"] #board {
+  background-color: #37474f !important;
+  background-image: radial-gradient(rgba(128, 203, 196, 0.15) 1.5px, transparent 1.5px);
+  border: 2px dashed rgba(128, 203, 196, 0.3);
+}
+
+html[data-user-color-scheme="dark"] .category-link,
+html[data-user-color-scheme="dark"] .tag-link {
+  color: #FF80AB !important;
   border-color: #FF80AB !important;
 }
 
-/* =========================================
-   🎨 自定義圖示 (Blogger)
-   ========================================= */
-
-/* 定義一個新的圖示 class */
-.icon-blogger-custom {
-  display: inline-block;
-
-  /* 原本是 1em，我們放大 1.2 倍讓它跟 FB 一樣大 */
-  width: 2em;
-  height: 2em;
-
-  /* 稍微往下調整，讓它跟文字或其他圖示對齊 */
-  vertical-align: -0.21em;
-
-  /* 保持原本的變色魔法 */
-  background-color: #FF5722;
-  -webkit-mask: url('/images/blogger.svg') no-repeat center / contain;
-  mask: url('/images/blogger.svg') no-repeat center / contain;
-
-  /* 增加一點左邊距，如果它跟 FB 靠太近的話 (可選) */
-  margin-left: 2px;
-}
-
-a:hover .icon-blogger-custom,
-.icon-blogger-custom:hover {
-  /* 放大 1.15 倍 (數字越大放越大) */
-  transform: scale(1.15);
-}
-
-/* =========================================
-   🔵 FB 圖示專屬 (永遠顯示品牌藍)
-   ========================================= */
-.icon-facebook-fill {
-  /* Facebook 官方品牌藍色 */
-  color: #1877F2 !important;
-
-  /* 如果覺得它跟 Blogger 比起來太小，也可以稍微放大一點 (選填) */
-  /* font-size: 1.1em; */
+html[data-user-color-scheme="dark"] .category-link:hover,
+html[data-user-color-scheme="dark"] .tag-link:hover {
+  background: #FF80AB !important;
+  color: #fff !important;
+  box-shadow: 0 0 8px rgba(255, 128, 171, 0.6);
 }
