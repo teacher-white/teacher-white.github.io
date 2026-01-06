@@ -4,66 +4,13 @@
   
   
   <entry>
-    <title>牙齦發炎與年齡的祕密</title>
-    <link href="/2025/12/30/hello-world2/"/>
-    <url>/2025/12/30/hello-world2/</url>
+    <title>Hello World</title>
+    <link href="/2026/01/06/hello-world/"/>
+    <url>/2026/01/06/hello-world/</url>
     
-    <content type="html"><![CDATA[<p><img src="/images/hello-world.png" alt="第一格 老師：嗚嗚...牙齦發炎好痛喔... (畫面：老師流著眼淚摀著臉)第二格 老師：老師跟你們說喔，老師有一個智齒，從 19 歲到現在都還沒長出來。第三格 學生：那老師你今年幾歲？ 老師：呃...25歲～ (冒冷汗)第四格 學生：那你長了六年還沒長出來耶～ 老師心聲：比起智齒長六年，你們竟然相信我只有 25 歲 XD"></p><p>這群死小孩竟然不相信我才 25 歲！氣死我也～😤<br>不過說真的，這顆智齒如果不拔掉，醫生說之後會更麻煩…<br>大家有拔智齒的慘痛經驗嗎？留言安慰我一下…</p><hr><p>(以下是漫畫對話內容)</p><blockquote><p><strong>老師：</strong> 嗚嗚…牙齦發炎好痛喔…<br><strong>學生：</strong> 那老師你今年幾歲？</p><p><strong>老師：</strong> 呃…25歲～<br><strong>學生：</strong> 比起智齒長六年，你們竟然相信我只有 25 歲 XD</p></blockquote>]]></content>
-    
-    
-    <categories>
-      
-      <category>短篇漫畫</category>
-      
-      <category>童言童語</category>
-      
-    </categories>
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
     
     
-    <tags>
-      
-      <tag>Tr.White</tag>
-      
-      <tag>崩潰</tag>
-      
-      <tag>學生語錄</tag>
-      
-      <tag>智齒</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>牙齦發炎與年齡的祕密</title>
-    <link href="/2025/12/28/hello-world/"/>
-    <url>/2025/12/28/hello-world/</url>
-    
-    <content type="html"><![CDATA[<p><img src="/images/hello-world.png" alt="第一格 老師：嗚嗚...牙齦發炎好痛喔... (畫面：老師流著眼淚摀著臉)第二格 老師：老師跟你們說喔，老師有一個智齒，從 19 歲到現在都還沒長出來。第三格 學生：那老師你今年幾歲？ 老師：呃...25歲～ (冒冷汗)第四格 學生：那你長了六年還沒長出來耶～ 老師心聲：比起智齒長六年，你們竟然相信我只有 25 歲 XD"></p><p>這群死小孩竟然不相信我才 25 歲！氣死我也～😤<br>不過說真的，這顆智齒如果不拔掉，醫生說之後會更麻煩…<br>大家有拔智齒的慘痛經驗嗎？留言安慰我一下…</p><hr><p>(以下是漫畫對話內容)</p><blockquote><p><strong>老師：</strong> 嗚嗚…牙齦發炎好痛喔…<br><strong>學生：</strong> 那老師你今年幾歲？</p><p><strong>老師：</strong> 呃…25歲～<br><strong>學生：</strong> 比起智齒長六年，你們竟然相信我只有 25 歲 XD</p></blockquote>]]></content>
-    
-    
-    <categories>
-      
-      <category>短篇漫畫</category>
-      
-      <category>童言童語</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Tr.White</tag>
-      
-      <tag>崩潰</tag>
-      
-      <tag>學生語錄</tag>
-      
-      <tag>智齒</tag>
-      
-    </tags>
     
   </entry>
   
