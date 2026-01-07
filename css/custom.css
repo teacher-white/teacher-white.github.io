@@ -125,7 +125,7 @@ body {
 }
 
 /* Mobile Menu Cleanup */
-@media (max-width: 768px) {
+@media (max-width: 991px) {
   .navbar-collapse {
     background: rgba(255, 255, 255, 0.98) !important;
     backdrop-filter: none !important;
@@ -484,8 +484,8 @@ nav.navbar:not(.top-nav-collapse) .navbar-toggler .animated-icon span {
   height: 85%;
   background-color: white;
   /* The "B" is white */
-  -webkit-mask: url('/images/blogger.svg') no-repeat center / contain;
-  mask: url('/images/blogger.svg') no-repeat center / contain;
+  -webkit-mask: url('/images/icon-social-blogger.svg') no-repeat center / contain;
+  mask: url('/images/icon-social-blogger.svg') no-repeat center / contain;
 }
 
 .icon-facebook-fill {
@@ -528,4 +528,9 @@ html[data-user-color-scheme="dark"] .tag-link:hover {
   background: #FF80AB !important;
   color: #fff !important;
   box-shadow: 0 0 8px rgba(255, 128, 171, 0.6);
+}
+
+/* Hide Fancybox Caption (Image Alt Text in Zoom Mode) */
+.fancybox-caption {
+  display: none !important;
 }
