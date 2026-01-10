@@ -148,8 +148,6 @@ body {
   }
 }
 
-/* Hamburger Icon Synchronization */
-/* Default (Top/Transparent): Icon should be White */
 /* Hamburger Icon Synchronization (animated-icon) */
 /* Default (Top/Transparent): Bars should be White */
 nav.navbar:not(.top-nav-collapse) .navbar-toggler .animated-icon span {
@@ -184,9 +182,6 @@ nav.navbar:not(.top-nav-collapse) .navbar-toggler .animated-icon span {
   background: rgba(0, 0, 0, 0.1) !important;
 }
 
-/* Lighter mask */
-/* Banner Text */
-/* Banner Text & Responsiveness */
 /* Banner Text & Responsiveness */
 /* Default (PC/Laptop > 768px) */
 #banner .h2 {
@@ -457,7 +452,6 @@ nav.navbar:not(.top-nav-collapse) .navbar-toggler .animated-icon span {
   border: none !important;
 }
 
-/* --- 6. Social Icons --- */
 /* --- 6. Social Icons --- */
 .icon-blogger-custom {
   display: inline-block;
