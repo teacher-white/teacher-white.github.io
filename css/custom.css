@@ -528,3 +528,15 @@ html[data-user-color-scheme="dark"] .tag-link:hover {
 .fancybox-caption {
   display: none !important;
 }
+/* --- 8. Post Lead (Description) Style --- */
+.post-lead {
+  font-size: 1.1rem;
+  color: #6c757d;
+  font-weight: 500;
+  line-height: 1.6;
+  margin: 20px auto;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-left: 4px solid #EC9DAF;
+  border-radius: 4px;
+}
