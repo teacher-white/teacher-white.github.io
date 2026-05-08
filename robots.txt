@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /
+
+Sitemap: https://teacher-white-comic.blogspot.com/sitemap.xml
